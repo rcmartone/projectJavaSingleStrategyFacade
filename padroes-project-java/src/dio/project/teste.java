@@ -1,5 +1,6 @@
 
 
+import facade.Facade;
 import singleton.singletonEager;
 import singleton.singletonLazy;
 import singleton.singletonLazyHolder;
@@ -30,13 +31,26 @@ public class teste {
 
         //STRATEGY
 
-        Comportamento normal = new ComportamentoNormal()
-        Comportamento defensivo = new ComportamentoDefensivo();
-        Comportamento agressivo = new ComportamentoAgressivo();
-
-        Robo robo = new Robo();
-        robo.setComportamento(normal);
-        robo.mover();
-        robo.mover();
+      // Strategy
+		
+		Comportamento defensivo = new ComportamentoDefensivo();
+		Comportamento normal = new ComportamentoNormal();
+		Comportamento agressivo = new ComportamentoAgressivo();
+		
+		Robo robo = new Robo();
+		robo.setComportamento(normal);
+		robo.mover();
+		robo.setComportamento(defensivo);
+		robo.mover();
+    robo.mover();
+		robo.mover();
+		robo.setComportamento(agressivo);
+		robo.mover();
+    
+    // Facade
+		
+		Facade facade = new Facade();
+		facade.migrarCliente("Rafael", "08247020");
+		
     }
 }
